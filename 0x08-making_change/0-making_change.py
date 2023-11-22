@@ -21,13 +21,14 @@ def makeChange(coins, total):
             coins_count += total // c
             return coins_count
         if total - c >= 0:
-            coins_count += total // c
-            total = total % c
-        else:
-            coins_count += 1
-            total -= c
-            if total == 0:
-                break
+            if int(total / c) > 1:
+                coins_count += total // c
+                total = total % c
+            else:
+                coins_count += 1
+                total -= c
+                if total == 0:
+                    break
     if total > 0:
         return -1
     return coins_count
