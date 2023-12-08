@@ -11,6 +11,9 @@ def isWinner(x, nums):
 
     def sieve(n):
         """Return list of prime numbers"""
+        if n < 2:
+            return [False] * (n + 1)
+
         is_prime = [True] * (n + 1)
         is_prime[0] = is_prime[1] = False
 
